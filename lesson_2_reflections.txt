@@ -9,5 +9,44 @@ How is the staging area different from the working directory and the repository?
 # need to commit all the files in the working directory at once, and 
 # can have untracked files if need be.
 
+How can you use the staging area to make sure you have one commit per logical change?
+# you can check what is in the staging area, and use git diff --staged to 
+# review what changes have been made, making sure that it contains just
+# the one logical change. If not, you can adjust the items and re- git add,
+# or remove items from the staging area using git reset HEAD <file>.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+# Branches are a great way to keep different versions of your repository
+# organised. For example, if you want to experiment with a new feature, or
+# a different version of your program, and don't want to mess with the 
+# master version of your file, you can create a different branch for each
+# of these versions, leaving the original master version untouched.
+
+How do the diagrams help you visualize the branch structure?
+# The diagrams help visualize the branch structure by displaying the
+# information in a way that's much easier to understand. By using git log --
+# graph --oneline branchnames you can display a simple tree structure to 
+# help you construct your diagram.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+# The result of using git merge on two branches results in a merge by a
+# recursive strategy. This means that git looks for the latest commit where 
+# branches were joined, and sees what each branch has added or removed since
+# then. Any changes that were added are included in the final merge, and 
+# anything that's been removed will also be removed from the final file.
+# 
+# It's represented in the diagram in that way because by merging, you are 
+# combining the changes from each branch. However, the previous commits
+# from each branch stay where they are, and don't have parents from the
+# other branches, so it makes no sense to combine these parts into a single 
+# branch, until the merge stage.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+# The pros are that it is much quicker, and, provided you know how the 
+# merging works, won't miss anything. The cons are that if there is a 
+# merging conflict, you will still have to do it manually. Also, if you'd 
+# like to merge the files in a way that's different from git's automatic 
+# algorithm, then, you'll have to do it manually anyway.
+
 
 
